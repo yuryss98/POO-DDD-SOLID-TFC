@@ -9,7 +9,7 @@ const config: Options = {
   port: Number(process.env.DB_PORT) || 3002,
   dialect: 'mysql',
   dialectOptions: {
-    timezone: 'Z',
+    timezone: 'Z',  
   },
   logging: false,
 }
