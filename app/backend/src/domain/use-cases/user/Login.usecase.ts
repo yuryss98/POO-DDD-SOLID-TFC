@@ -16,7 +16,12 @@ export default class LoginUseCase {
       throw new HttpException(401, 'Incorrect email or password');
     }
 
-    const token = this.authService.createToken(userFound.username, userFound.id, userFound.email);
+    const token = this.authService.createToken(
+      userFound.username,
+      userFound.id,
+      userFound.email,
+      userFound.role,
+    );
 
     return token;
   }
