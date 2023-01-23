@@ -1,4 +1,4 @@
-import { IUserCredentials } from '../../../entities/interfaces/IUser';
+import { IUserCredentials } from '../../../interfaces/IUser';
 import HttpException from '../Http.exception';
 
 export default class LoginValidation implements IUserCredentials {
