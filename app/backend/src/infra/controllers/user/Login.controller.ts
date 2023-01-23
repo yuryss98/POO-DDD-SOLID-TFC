@@ -9,4 +9,10 @@ export default class LoginController {
 
     return res.status(200).json({ token });
   };
+
+  role = async (req: Request, res: Response) => {
+    const { role } = req.body.user.data;
+
+    return res.status(200).json({ role });
+  };
 }
