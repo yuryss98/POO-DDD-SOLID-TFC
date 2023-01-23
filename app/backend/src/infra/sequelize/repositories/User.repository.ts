@@ -1,5 +1,5 @@
+import User from '../../../domain/entities/User';
 import UserModel from '../../../database/models/User';
-import { IUserDTO } from '../../../domain/entities/interfaces/IUser';
 
 export default class SequelizeUserRepository {
   private modelUser = UserModel;
@@ -11,6 +11,6 @@ export default class SequelizeUserRepository {
       },
     });
 
-    return user?.dataValues as IUserDTO;
+    return user?.dataValues as User;
   }
 }
