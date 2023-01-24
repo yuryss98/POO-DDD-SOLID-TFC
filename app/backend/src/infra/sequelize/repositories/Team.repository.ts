@@ -9,4 +9,10 @@ export default class SequelizeTeamRepository {
 
     return teams as ITeamDTO[];
   }
+
+  async findById(id: number) {
+    const team = await this.modelTeam.findByPk(id);
+
+    return team as ITeamDTO;
+  }
 }
