@@ -42,6 +42,16 @@ describe('Testing login behavior', () => {
     expect(response.status).to.be.equal(401);
     expect(response.body).to.deep.equal({ message: 'Incorrect email or password' });
   });
+
+  it('should return status 401 when informing an email in invalid', async () => {
+    const response = await chai
+    .request(app)
+    .post('/login')
+    .send({ email: 'email@invalid.com', password: 'password' })
+
+    expect(response.status).to.be.equal(401);
+    expect(response.body).to.deep.equal({ message: 'Incorrect email or password' });
+  });
   
   it('Should return a token and status 200 when logging in with valid credentials', async () => {
     sinon.stub(User, 'findOne').resolves({ dataValues: UserMock} as User);
