@@ -54,7 +54,24 @@ describe('Testing login behavior', () => {
     expect(response.status).to.be.equal(401);
     expect(response.body).to.deep.equal({ message: 'Incorrect email or password' });
   });
-  
+
+  it('should return status 401 on not providing a token and not providing a valid token', async () => {
+    let response = await chai
+      .request(app)
+      .get('/login/validate');
+
+    expect(response.status).to.have.equal(401);
+    expect(response.body).to.deep.equal({ message: 'Token not found' });
+
+    response = await chai
+      .request(app)
+      .get('/login/validate')
+      .set('authorization', 'Invalid token');
+
+    expect(response.status).to.have.equal(401);
+    expect(response.body).to.deep.equal({ message: 'Invalid token' });
+  });
+
   it(`Should return a token and status 200 when logging in with valid
   credentials and returning user role`, async () => {
     sinon.stub(User, 'findOne').resolves({ dataValues: UserMock} as User);
