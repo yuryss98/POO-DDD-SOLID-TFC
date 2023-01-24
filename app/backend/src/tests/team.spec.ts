@@ -25,4 +25,15 @@ describe('Tests the behaviors in the teams route', () => {
     expect(response.status).to.be.equal(200);
     expect(response.body).to.deep.equal(TeamMock);
   });
+
+  it('Should return status 200 and list a team by id', async () => {
+    sinon.stub(Team, 'findByPk').resolves(TeamMock[4] as Team);
+
+    const response = await chai
+    .request(app)
+    .get('/teams/5')
+
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.deep.equal(TeamMock[4]);
+  });
 });
