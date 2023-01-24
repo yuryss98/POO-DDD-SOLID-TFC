@@ -13,6 +13,8 @@ chai.use(chaiHttp);
 const { expect } = chai;
 
 describe('Testing login behavior', () => {
+  afterEach(sinon.restore)
+
   it('Should return status 400 when not informing the email field', async () => {
     const response = await chai
     .request(app)
@@ -53,15 +55,24 @@ describe('Testing login behavior', () => {
     expect(response.body).to.deep.equal({ message: 'Incorrect email or password' });
   });
   
-  it('Should return a token and status 200 when logging in with valid credentials', async () => {
+  it(`Should return a token and status 200 when logging in with valid
+  credentials and returning user role`, async () => {
     sinon.stub(User, 'findOne').resolves({ dataValues: UserMock} as User);
 
-    const response = await chai
+    const login = await chai
       .request(app)
       .post('/login')
       .send({ email: 'test@test.com', password: 'secret_user' })
 
-    expect(response.status).to.have.equal(200);
-    expect(response.body).to.have.property('token');
+    expect(login.status).to.have.equal(200);
+    expect(login.body).to.have.property('token');
+
+    const getRole = await chai
+      .request(app)
+      .get('/login/validate')
+      .set('authorization', login.body.token)
+
+    expect(getRole.status).to.equal(200);
+    expect(getRole.body).to.deep.equal({ role: 'admin' })
   });
 });
