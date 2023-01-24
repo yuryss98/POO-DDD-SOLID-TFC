@@ -1,5 +1,5 @@
-import Team from '../entities/Team';
+import ITeamDTO from '../interfaces/ITeam';
 
 export default abstract class TeamRepository {
-  abstract findAll(): Promise<Team[]>;
+  abstract findAll(): Promise<ITeamDTO[]>;
 }
