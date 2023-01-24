@@ -4,6 +4,8 @@ import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
 import { app } from '../app';
+import User from '../database/models/User'
+import UserMock from './mocks/UserMock';
 
 
 chai.use(chaiHttp);
@@ -11,8 +13,6 @@ chai.use(chaiHttp);
 const { expect } = chai;
 
 describe('Testing login behavior', () => {
-  afterEach(sinon.restore);
-
   it('Should return status 400 when not informing the email field', async () => {
     const response = await chai
     .request(app)
@@ -41,5 +41,17 @@ describe('Testing login behavior', () => {
 
     expect(response.status).to.be.equal(401);
     expect(response.body).to.deep.equal({ message: 'Incorrect email or password' });
+  });
+  
+  it('Should return a token and status 200 when logging in with valid credentials', async () => {
+    sinon.stub(User, 'findOne').resolves({ dataValues: UserMock} as User);
+
+    const response = await chai
+      .request(app)
+      .post('/login')
+      .send({ email: 'test@test.com', password: 'secret_user' })
+
+    expect(response.status).to.have.equal(200);
+    expect(response.body).to.have.property('token');
   });
 });
