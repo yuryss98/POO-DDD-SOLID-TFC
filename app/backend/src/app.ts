@@ -1,5 +1,5 @@
-import 'express-async-errors';
 import * as express from 'express';
+import 'express-async-errors';
 import errorHandler from './infra/middlewares/Error.handle';
 import routes from './infra/routes';
 
