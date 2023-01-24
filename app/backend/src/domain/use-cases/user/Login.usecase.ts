@@ -13,9 +13,9 @@ export default class LoginUseCase {
   ) { }
 
   async execute(user: IUserCredentials) {
-    const validateUserCredentials = new LoginValidation(user.email, user.password);
+    LoginValidation.validateUserCredentials(user.email, user.password);
 
-    const userFound = await this.userRepository.findByEmail(validateUserCredentials.email);
+    const userFound = await this.userRepository.findByEmail(user.email);
     if (!userFound || !this.decryptPassword.checkPassword(user.password, userFound.password)) {
       throw new HttpException(401, 'Incorrect email or password');
     }
