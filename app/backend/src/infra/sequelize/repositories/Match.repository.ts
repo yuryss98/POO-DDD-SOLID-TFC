@@ -1,6 +1,6 @@
 import Team from '../../../database/models/Team';
 import MatchModel from '../../../database/models/Match';
-import IMatchDTO from '../../../domain/interfaces/IMatch';
+import IMatchDTO, { IMatchSave } from '../../../domain/interfaces/IMatch';
 
 export default class SequelizeMatchRepository {
   private modelMatch = MatchModel;
@@ -17,5 +17,11 @@ export default class SequelizeMatchRepository {
     });
 
     return matches as unknown as IMatchDTO[];
+  }
+
+  async saveMatch(match: IMatchSave) {
+    const result = await this.modelMatch.create({ ...match });
+
+    return result.dataValues.id;
   }
 }

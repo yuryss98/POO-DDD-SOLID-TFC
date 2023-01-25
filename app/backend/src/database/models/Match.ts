@@ -42,6 +42,7 @@ Match.init({
   inProgress: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
+    defaultValue: true,
   },
 }, { sequelize: connection, tableName: 'matches', timestamps: false, underscored: true });
 
