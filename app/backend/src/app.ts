@@ -15,6 +15,7 @@ class App {
     this.app.get('/', (req, res) => res.json({ ok: true }));
     this.app.use('/login', routes.loginRoute);
     this.app.use('/teams', routes.teamRoute);
+    this.app.use('/matches', routes.matchRoute);
 
     this.app.use(errorHandler);
   }
