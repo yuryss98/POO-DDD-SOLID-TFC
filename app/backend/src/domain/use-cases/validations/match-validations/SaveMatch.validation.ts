@@ -13,7 +13,7 @@ export default class SaveMatchValidation {
       throw new HttpException(400, 'All fields must be filled');
     }
 
-    SaveMatchValidation.validateTeamsIds(fieldsInput.awayTeamId, fieldsInput.awayTeamId);
+    SaveMatchValidation.validateTeamsIds(fieldsInput.awayTeamId, fieldsInput.homeTeamId);
   }
 
   static validateTeamsIds(awayTeamId: number, homeTeamId: number) {
