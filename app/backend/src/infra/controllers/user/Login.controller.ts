@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { IDecode } from '../../middlewares/Validate.token';
 import LoginUseCase from '../../../domain/use-cases/user/Login.usecase';
 
 export default class LoginController {
@@ -11,7 +12,7 @@ export default class LoginController {
   };
 
   role = async (req: Request, res: Response) => {
-    const { role } = req.body.user.data;
+    const { role } = (req as IDecode).user;
 
     return res.status(200).json({ role });
   };
