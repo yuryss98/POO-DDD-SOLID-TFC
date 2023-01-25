@@ -7,7 +7,7 @@ export default class SaveMatchUseCase {
   constructor(private matchRepository: MatchRepository) { }
 
   async execute(match: IMatchSave) {
-    SaveMatchValidation.validateTeamsIds(match.homeTeamId, match.awayTeamId);
+    SaveMatchValidation.validateFieldInput(match);
 
     const teams = await this.matchRepository.findAll(undefined);
     const homeTeamExists = teams.filter((team) => team.homeTeamId === match.homeTeamId);
