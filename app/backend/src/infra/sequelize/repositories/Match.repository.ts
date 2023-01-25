@@ -16,13 +16,6 @@ export default class SequelizeMatchRepository {
       ],
     });
 
-    const matchDataValues = matches.map((match) => match.dataValues);
-    const matchData = matchDataValues.map((data) => ({
-      ...data,
-      homeTeam: data.homeTeam.dataValues,
-      awayTeam: data.awayTeam.dataValues,
-    }));
-
-    return matchData as IMatchDTO[];
+    return matches as unknown as IMatchDTO[];
   }
 }

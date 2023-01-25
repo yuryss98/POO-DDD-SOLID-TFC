@@ -1,6 +1,37 @@
-const matches = [
+const matchesInTime = [
   {
     id: 1,
+    homeTeamId: 6,
+    homeTeamGoals: 1,
+    awayTeamId: 1,
+    awayTeamGoals: 0,
+    inProgress: true,
+    homeTeam: {
+      teamName: 'Ferroviária'
+    },
+    awayTeam: {
+      teamName: 'Avaí/Kindermann'
+    }
+  },
+  {
+    id: 2,
+    homeTeamId: 11,
+    homeTeamGoals: 0,
+    awayTeamId: 10,
+    awayTeamGoals: 0,
+    inProgress: true,
+    homeTeam: {
+      teamName: 'Napoli-SC'
+    },
+    awayTeam: {
+      teamName: 'Minas Brasília'
+    }
+  },
+];
+
+const finishedMatches = [
+  {
+    id: 3,
     homeTeamId: 16,
     homeTeamGoals: 1,
     awayTeamId: 8,
@@ -14,7 +45,7 @@ const matches = [
     }
   },
   {
-    id: 2,
+    id: 4,
     homeTeamId: 9,
     homeTeamGoals: 1,
     awayTeamId: 14,
@@ -26,7 +57,7 @@ const matches = [
     awayTeam: {
       teamName: 'Santos'
     }
-  }
+  },
 ]
 
-export default matches;
+export { matchesInTime, finishedMatches };
