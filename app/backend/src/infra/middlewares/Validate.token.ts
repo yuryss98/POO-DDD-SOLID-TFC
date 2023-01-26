@@ -16,7 +16,7 @@ const validateToken = async (req: Request, res: Response, next: NextFunction) =>
       return res.status(401).json({ message: 'Token not found' });
     }
 
-    const SECRET_KEY = process.env.JWT_SECRET as string;
+    const SECRET_KEY = process.env.JWT_SECRET || 'secret_key';
 
     const { data: { id, role } } = verify(token, SECRET_KEY) as JwtPayload;
 
