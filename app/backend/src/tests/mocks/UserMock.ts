@@ -1,5 +1,5 @@
 import { sign } from "jsonwebtoken";
-const secret = process.env.JWT_SECRET || 'jwt_secret';
+const secret = process.env.JWT_SECRET || 'secret_key';
 
 export default {
   id: 1,

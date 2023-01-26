@@ -46,6 +46,8 @@ describe('Testing login behavior', () => {
   });
 
   it('should return status 401 when informing an email in invalid', async () => {
+    sinon.stub(User, 'findOne').resolves({ dataValues: UserMock} as User);
+
     const response = await chai
     .request(app)
     .post('/login')

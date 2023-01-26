@@ -5,16 +5,15 @@ import chaiHttp = require('chai-http');
 
 import { app } from '../app';
 import Match from '../database/models/Match'
+import Team from '../database/models/Team';
 import {
   finishedMatches,
   matchesInTime,
-  newMatchInvalid,
   newMatchValid,
   createMatch
 } from './mocks/MatchMock';
-import * as Jwt from 'jsonwebtoken';
 import UserMock, { mockToken } from './mocks/UserMock';
-import User from '../database/models/User';
+import teamsMock from './mocks/TeamMock'
 
 chai.use(chaiHttp);
 
@@ -94,18 +93,78 @@ describe('Tests the behaviors in the matches route', () => {
       expect(response.status).to.be.equal(400);
       expect(response.body).to.deep.equal({ message: 'All fields must be filled' });
     });
+
+    it('Should return status 404 when not finding a team', async () => {
+      sinon.stub(Team, 'findAll').resolves(teamsMock as Team[]);
+
+      const response = await chai
+      .request(app)
+      .post('/matches')
+      .set('authorization', token)
+      .send({
+        ...newMatchValid,
+        awayTeamId: 99999
+      })
+  
+      expect(response.status).to.be.equal(404);
+      expect(response.body).to.deep.equal({ message: 'There is no team with such id!' });
+    });
   
     it('Should return status 422 when passing two equal teams', async () => {
       const response = await chai
       .request(app)
       .post('/matches')
       .set('authorization', token)
-      .send(newMatchInvalid)
+      .send({
+        ...newMatchValid,
+        awayTeamId: 1
+      })
   
       expect(response.status).to.be.equal(422);
       expect(response.body).to.deep.equal({
         message: 'It is not possible to create a match with two equal teams'
       });
+    });
+
+    it('Should return status 201 and create a new match', async () => {
+      sinon.stub(Team, 'findAll').resolves(teamsMock as Team[]);
+      sinon.stub(Match, 'create').resolves({
+        dataValues: { id: createMatch.id }
+      } as any);
+
+      const response = await chai
+      .request(app)
+      .post('/matches')
+      .set('authorization', token)
+      .send(newMatchValid)
+  
+      expect(response.status).to.be.equal(201);
+      expect(response.body).to.deep.equal(createMatch);
+    });
+  })
+
+  describe('Method PATCH', () => {
+    it('should return status 200 when ending a match', async () => {
+      sinon.stub(Match, 'update').resolves();
+
+      const response = await chai
+      .request(app)
+      .patch('/matches/10/finish')
+  
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.deep.equal({ message: 'Finished' });
+    });
+
+    it('should return status 200 and change match status', async () => {
+      sinon.stub(Match, 'update').resolves();
+
+      const response = await chai
+      .request(app)
+      .patch('/matches/10')
+      .send({ homeTeamGoals: 5,awayTeamGoals: 5 })
+  
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.deep.equal({ message: 'Game Updated' });
     });
   })
 });
