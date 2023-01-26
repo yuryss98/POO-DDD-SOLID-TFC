@@ -1,8 +1,11 @@
-export interface IMatchSave {
-  homeTeamId: number;
+export interface IUpdateMatchInProgress {
   homeTeamGoals: number;
-  awayTeamId: number;
   awayTeamGoals: number;
+}
+
+export interface IMatchSave extends IUpdateMatchInProgress {
+  homeTeamId: number;
+  awayTeamId: number;
 }
 
 export default interface IMatchDTO extends IMatchSave {
