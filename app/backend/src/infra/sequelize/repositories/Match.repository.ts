@@ -1,6 +1,6 @@
 import Team from '../../../database/models/Team';
 import MatchModel from '../../../database/models/Match';
-import IMatchDTO, { IMatchSave } from '../../../domain/interfaces/IMatch';
+import IMatchDTO, { IMatchSave, IUpdateMatchInProgress } from '../../../domain/interfaces/IMatch';
 
 export default class SequelizeMatchRepository {
   private modelMatch = MatchModel;
@@ -28,6 +28,13 @@ export default class SequelizeMatchRepository {
   async finishMatch(id: number) {
     await this.modelMatch.update(
       { inProgress: false },
+      { where: { id } },
+    );
+  }
+
+  async gameUpdateInProgress(id: number, input: IUpdateMatchInProgress) {
+    await this.modelMatch.update(
+      input,
       { where: { id } },
     );
   }
