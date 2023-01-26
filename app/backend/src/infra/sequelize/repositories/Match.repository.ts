@@ -24,4 +24,11 @@ export default class SequelizeMatchRepository {
 
     return result.dataValues.id;
   }
+
+  async finishMatch(id: number) {
+    await this.modelMatch.update(
+      { inProgress: false },
+      { where: { id } },
+    );
+  }
 }
