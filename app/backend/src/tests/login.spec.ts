@@ -69,7 +69,7 @@ describe('Testing login behavior', () => {
       .set('authorization', 'Invalid token');
 
     expect(response.status).to.have.equal(401);
-    expect(response.body).to.deep.equal({ message: 'Invalid token' });
+    expect(response.body).to.deep.equal({ message: 'Token must be a valid token' });
   });
 
   it(`Should return a token and status 200 when logging in with valid

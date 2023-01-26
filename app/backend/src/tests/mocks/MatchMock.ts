@@ -60,4 +60,27 @@ const finishedMatches = [
   },
 ]
 
-export { matchesInTime, finishedMatches };
+const createMatch = {
+  id: 5,
+  homeTeamId: 6,
+  awayTeamId: 1,
+  homeTeamGoals: 2,
+  awayTeamGoals: 2,
+  inProgress: true
+}
+
+const newMatchInvalid = {
+  homeTeamId: 16,
+  awayTeamId: 16,
+  homeTeamGoals: 2,
+  awayTeamGoals: 2,
+}
+
+const newMatchValid = {
+  homeTeamId: 6,
+  awayTeamId: 1,
+  homeTeamGoals: 2,
+  awayTeamGoals: 2,
+}
+
+export { matchesInTime, finishedMatches, newMatchValid, newMatchInvalid, createMatch };
