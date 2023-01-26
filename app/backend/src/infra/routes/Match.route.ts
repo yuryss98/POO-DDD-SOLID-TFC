@@ -10,6 +10,6 @@ const router = Router();
 
 router.get('/', listAllMatchesController.getAll);
 router.post('/', validateToken, saveMatchController.saveMatch);
-router.patch('/', finishAMatchContrller.finishMatch);
+router.patch('/:id/finish', finishAMatchContrller.finishMatch);
 
 export default router;
