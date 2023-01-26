@@ -65,6 +65,8 @@ describe('Tests the behaviors in the matches route', () => {
   });
 
   describe('Method POST', () => {
+    const token = mockToken();
+
     it('Should return status 401 on not providing a token and not providing a valid token', async () => {
       let response = await chai
         .request(app)
