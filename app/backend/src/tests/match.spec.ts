@@ -85,17 +85,10 @@ describe('Tests the behaviors in the matches route', () => {
     });
   
     it('Should return status 400 in not providing all fields in method post', async () => {
-      sinon.stub(User, 'findOne').resolves({ dataValues: UserMock} as User);
-  
-      const login = await chai
-        .request(app)
-        .post('/login')
-        .send({ email: 'test@test.com', password: 'secret_user' })
-  
       const response = await chai
       .request(app)
       .post('/matches')
-      .set('authorization', login.body.token)
+      .set('authorization', token)
       .send({})
   
       expect(response.status).to.be.equal(400);
@@ -103,17 +96,10 @@ describe('Tests the behaviors in the matches route', () => {
     });
   
     it('Should return status 422 when passing two equal teams', async () => {
-      sinon.stub(User, 'findOne').resolves({ dataValues: UserMock} as User);
-  
-      const login = await chai
-        .request(app)
-        .post('/login')
-        .send({ email: 'test@test.com', password: 'secret_user' })
-  
       const response = await chai
       .request(app)
       .post('/matches')
-      .set('authorization', login.body.token)
+      .set('authorization', token)
       .send(newMatchInvalid)
   
       expect(response.status).to.be.equal(422);

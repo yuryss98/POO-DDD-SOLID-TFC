@@ -10,7 +10,14 @@ export default {
 }
 
 
-const mockToken = () => sign({ id: 10, role: 'admin' }, secret, {
+const mockToken = () => sign({
+  data: {
+    username: 'Test',
+    userId: 99,
+    email: 'test@test.com',
+    role: 'admin'
+  }
+}, secret, {
   expiresIn: '5h',
   algorithm: 'HS256',
 })
