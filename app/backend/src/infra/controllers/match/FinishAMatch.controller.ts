@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import FinishAMatchUseCase from '../../../domain/use-cases/match/FinishAMatch.usecase';
 
-export default class ListAllMatchesController {
+export default class FinishAMatchController {
   constructor(private _FinishAMatchUseCase: FinishAMatchUseCase) { }
 
   finishMatch = async (req: Request, res: Response) => {
