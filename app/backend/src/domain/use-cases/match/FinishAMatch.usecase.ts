@@ -1,6 +1,6 @@
 import MatchRepository from '../../repository/Match.repository';
 
-export default class ListAllMatchesUseCase {
+export default class FinishAMatchUseCase {
   constructor(private matchRepository: MatchRepository) { }
 
   async execute(id: number) {
