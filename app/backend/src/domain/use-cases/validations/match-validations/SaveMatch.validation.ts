@@ -5,9 +5,9 @@ export default class SaveMatchValidation {
   static validateFieldInput(fieldsInput: IMatchSave) {
     if (
       !fieldsInput
-        || !fieldsInput.awayTeamGoals
+        || fieldsInput.awayTeamGoals === undefined
         || !fieldsInput.awayTeamId
-        || !fieldsInput.homeTeamGoals
+        || fieldsInput.homeTeamGoals === undefined
         || !fieldsInput.homeTeamId
     ) {
       throw new HttpException(400, 'All fields must be filled');
