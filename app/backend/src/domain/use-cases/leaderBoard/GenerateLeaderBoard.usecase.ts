@@ -8,10 +8,12 @@ export default class GenerateLeaderBoardUseCase {
     private _teamRepository: TeamRepository,
   ) { }
 
-  async execute() {
+  async execute(inHome: 'home' | 'away' | 'general') {
     const finishedMatches = await this._matchRepository.findAll('false');
     const teams = await this._teamRepository.findAll();
-    const getAllLeaderBoards = teams.map((team) => new LeaderBoard(team.teamName, finishedMatches));
+    const getAllLeaderBoards = teams.map(
+      (team) => new LeaderBoard(team.teamName, finishedMatches, inHome),
+    );
 
     return getAllLeaderBoards.sort((a, b) => (
       b.totalPoints - a.totalPoints
