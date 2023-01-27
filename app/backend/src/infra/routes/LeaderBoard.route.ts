@@ -15,5 +15,7 @@ const leaderBoardsUseCase = new GenerateLeaderBoardUseCase(matchRepository, team
 const leaderBoardsController = new GenerateLeaderBoardsController(leaderBoardsUseCase);
 
 router.get('/home', leaderBoardsController.generateLeaderBoard);
+router.get('/away', leaderBoardsController.generateLeaderBoard);
+router.get('/', leaderBoardsController.generateLeaderBoard);
 
 export default router;
