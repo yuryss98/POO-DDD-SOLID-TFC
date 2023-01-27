@@ -1,5 +1,4 @@
 import IMatchDTO from '../interfaces/IMatch';
-import ITeamDTO from '../interfaces/ITeam';
 
 export default class LeaderBoard {
   name = '';
@@ -13,12 +12,12 @@ export default class LeaderBoard {
   goalsBalance = 0;
   efficiency = '';
 
-  constructor(private team: ITeamDTO, finishedMatches: IMatchDTO[]) {
+  constructor(teamName: string, finishedMatches: IMatchDTO[]) {
+    this.name = teamName;
     this.generate(finishedMatches);
   }
 
   generate(finishedMatches: IMatchDTO[]) {
-    this.name = this.team.teamName;
     this.getQuantityGamesAndGoals(finishedMatches);
     this.getWinsDrawsAndLosses(finishedMatches);
     this.calculate();
