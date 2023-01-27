@@ -31,31 +31,91 @@ const matchesInTime = [
 
 const finishedMatches = [
   {
-    id: 3,
-    homeTeamId: 16,
+    id: 1,
+    homeTeamId: 1,
+    homeTeamGoals: 5,
+    awayTeamId: 2,
+    awayTeamGoals: 1,
+    inProgress: false,
+    homeTeam: {
+      teamName: 'Avaí/Kindermann'
+    },
+    awayTeam: {
+      teamName: 'Bahia'
+    }
+  },
+  {
+    id: 2,
+    homeTeamId: 3,
     homeTeamGoals: 1,
+    awayTeamId: 5,
+    awayTeamGoals: 4,
+    inProgress: false,
+    homeTeam: {
+      teamName: 'Botafogo'
+    },
+    awayTeam: {
+      teamName: 'Cruzeiro'
+    }
+  },
+
+  {
+    id: 4,
+    homeTeamId: 7,
+    homeTeamGoals: 3,
     awayTeamId: 8,
     awayTeamGoals: 1,
     inProgress: false,
     homeTeam: {
-      teamName: 'São Paulo'
+      teamName: 'Grêmio'
     },
     awayTeam: {
-      teamName: 'Grêmio'
+      teamName: 'Internacional'
     }
   },
+
   {
-    id: 4,
-    homeTeamId: 9,
-    homeTeamGoals: 1,
-    awayTeamId: 14,
+    id: 5,
+    homeTeamId: 8,
+    homeTeamGoals: 3,
+    awayTeamId: 3,
     awayTeamGoals: 1,
     inProgress: false,
     homeTeam: {
       teamName: 'Internacional'
     },
     awayTeam: {
-      teamName: 'Santos'
+      teamName: 'Botafogo'
+    }
+  },
+
+  {
+    id: 6,
+    homeTeamId: 5,
+    homeTeamGoals: 3,
+    awayTeamId: 7,
+    awayTeamGoals: 1,
+    inProgress: false,
+    homeTeam: {
+      teamName: 'Cruzeiro'
+    },
+    awayTeam: {
+      teamName: 'Grêmio'
+    }
+  },
+
+  {
+    id: 7,
+    homeTeamId: 2,
+    homeTeamGoals: 3,
+    awayTeamId: 1,
+    awayTeamGoals: 1,
+    inProgress: false,
+    homeTeam: {
+      teamName: 'Bahia'
+    },
+    awayTeam: {
+      teamName: 'Avaí/Kindermann'
     }
   },
 ]

@@ -12,12 +12,18 @@ const teams = [
     teamName: 'Botafogo',
   },
   {
-    id: 4,
-    teamName: 'Corinthians',
-  },
-  {
     id: 5,
     teamName: 'Cruzeiro',
+  },
+
+  {
+    id: 7,
+    teamName: 'Grêmio',
+  },
+
+  {
+    id: 8,
+    teamName: 'Internacional',
   },
 ]
 
