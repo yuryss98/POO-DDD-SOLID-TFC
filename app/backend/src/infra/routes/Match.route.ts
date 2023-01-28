@@ -1,11 +1,11 @@
 import { Router } from 'express';
+import validateToken from '../middlewares/Validate.token';
 import {
   listAllMatchesController,
   saveMatchController,
   finishAMatchContrller,
   gameUpdateInProgressController,
 } from '../factories/controllers/match.factory';
-import validateToken from '../middlewares/Validate.token';
 
 const router = Router();
 

@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
-import GameUpdateInProgressUseCase
-  from '../../../domain/use-cases/match/GameUpdateInProgress.usecase';
+import { GameUpdateInProgressUseCase } from '../../../domain/use-cases';
 
 export default class GameUpdateInProgressController {
   constructor(private _gameUpdateInProgressUseCase: GameUpdateInProgressUseCase) { }

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import ListTeamByIdUseCase from '../../../domain/use-cases/team/ListTeamById.usecase';
+import { ListTeamByIdUseCase } from '../../../domain/use-cases';
 
 export default class ListTeamsByIdController {
   constructor(private _listTeamByIdUseCase: ListTeamByIdUseCase) { }

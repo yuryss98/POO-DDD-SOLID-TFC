@@ -1,10 +1,7 @@
 import { Router } from 'express';
-import GenerateLeaderBoardUseCase
-  from '../../domain/use-cases/leaderBoard/GenerateLeaderBoard.usecase';
-import GenerateLeaderBoardsController
-  from '../controllers/leaderBoard/GenerateLeaderBoardsController';
-import SequelizeMatchRepository from '../sequelize/repositories/Match.repository';
-import SequelizeTeamRepository from '../sequelize/repositories/Team.repository';
+import { SequelizeTeamRepository, SequelizeMatchRepository } from '../sequelize';
+import { GenerateLeaderBoardUseCase } from '../../domain/use-cases';
+import { GenerateLeaderBoardsController } from '../controllers';
 
 const router = Router();
 

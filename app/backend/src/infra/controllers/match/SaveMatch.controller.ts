@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import SaveMatchUseCase from '../../../domain/use-cases/match/SaveMatch.usecase';
+import { SaveMatchUseCase } from '../../../domain/use-cases';
 
 export default class SaveMatchController {
   constructor(private _saveMatchUseCase: SaveMatchUseCase) { }

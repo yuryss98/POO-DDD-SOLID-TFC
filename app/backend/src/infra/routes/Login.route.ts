@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import LoginUseCase from '../../domain/use-cases/user/Login.usecase';
 import AuthService from '../auth/Token';
 import DecryptPassword from '../Bcrypt/Decrypt.password';
-import LoginController from '../controllers/user/Login.controller';
 import validateToken from '../middlewares/Validate.token';
-import SequelizeUserRepository from '../sequelize/repositories/User.repository';
+import { SequelizeUserRepository } from '../sequelize';
+import { LoginUseCase } from '../../domain/use-cases';
+import { LoginController } from '../controllers';
 
 const router = Router();
 

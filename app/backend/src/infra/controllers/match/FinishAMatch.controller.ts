@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import FinishAMatchUseCase from '../../../domain/use-cases/match/FinishAMatch.usecase';
+import { FinishAMatchUseCase } from '../../../domain/use-cases';
 
 export default class FinishAMatchController {
   constructor(private _FinishAMatchUseCase: FinishAMatchUseCase) { }

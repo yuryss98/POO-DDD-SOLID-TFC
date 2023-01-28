@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { IDecode } from '../../middlewares/Validate.token';
-import LoginUseCase from '../../../domain/use-cases/user/Login.usecase';
+import { LoginUseCase } from '../../../domain/use-cases';
 
 export default class LoginController {
   constructor(private _LoginUseCase: LoginUseCase) { }

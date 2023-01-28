@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import ListAllTeamsUseCase from '../../../domain/use-cases/team/ListAllTeams.usecase';
+import { ListAllTeamsUseCase } from '../../../domain/use-cases';
 
 export default class ListAllTeamsController {
   constructor(private _ListAllTeamsUseCase: ListAllTeamsUseCase) { }

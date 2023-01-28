@@ -1,4 +1,4 @@
-import ITeamDTO from '../../../domain/interfaces/ITeam';
+import { ITeamDTO } from '../../../domain/interfaces';
 import TeamModel from '../../../database/models/Team';
 
 export default class SequelizeTeamRepository {

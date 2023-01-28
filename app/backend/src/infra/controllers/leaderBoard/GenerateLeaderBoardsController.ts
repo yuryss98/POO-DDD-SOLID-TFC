@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
-import GenerateLeaderBoardUseCase
-  from '../../../domain/use-cases/leaderBoard/GenerateLeaderBoard.usecase';
+import { GenerateLeaderBoardUseCase } from '../../../domain/use-cases';
 
 export default class GenerateLeaderBoardsController {
   constructor(private _generateLeaderBoardUseCase: GenerateLeaderBoardUseCase) { }

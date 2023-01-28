@@ -1,8 +1,6 @@
-import ListTeamByIdUseCase from '../../../domain/use-cases/team/ListTeamById.usecase';
-import ListAllTeamsUseCase from '../../../domain/use-cases/team/ListAllTeams.usecase';
-import ListAllTeamsController from '../../controllers/team/ListAllTeams.conrtoller';
-import ListTeamsByIdController from '../../controllers/team/ListTeamById.controller';
-import SequelizeTeamRepository from '../../sequelize/repositories/Team.repository';
+import { SequelizeTeamRepository } from '../../sequelize';
+import { ListTeamsByIdController, ListAllTeamsController } from '../../controllers';
+import { ListAllTeamsUseCase, ListTeamByIdUseCase } from '../../../domain/use-cases';
 
 const teamRepository = new SequelizeTeamRepository();
 const listtAllTeamsUseCase = new ListAllTeamsUseCase(teamRepository);

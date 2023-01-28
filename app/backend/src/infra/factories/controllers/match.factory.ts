@@ -1,15 +1,21 @@
-import SequelizeMatchRepository from '../../sequelize/repositories/Match.repository';
-import ListAllMatchesUseCase from '../../../domain/use-cases/match/ListAllMatches.usecase';
-import ListAllMatchesController from '../../controllers/match/ListAllMatches.controller';
-import SaveMatchController from '../../controllers/match/SaveMatch.controller';
-import SaveMatchUseCase from '../../../domain/use-cases/match/SaveMatch.usecase';
-import SequelizeTeamRepository from '../../sequelize/repositories/Team.repository';
-import FinishAMatchController from '../../controllers/match/FinishAMatch.controller';
-import FinishAMatchUseCase from '../../../domain/use-cases/match/FinishAMatch.usecase';
-import GameUpdateInProgressController
-  from '../../controllers/match/GameUpdateInProgress.controller';
-import GameUpdateInProgressUseCase
-  from '../../../domain/use-cases/match/GameUpdateInProgress.usecase';
+import {
+  ListAllMatchesUseCase,
+  SaveMatchUseCase,
+  FinishAMatchUseCase,
+  GameUpdateInProgressUseCase,
+} from '../../../domain/use-cases';
+
+import {
+  SequelizeMatchRepository,
+  SequelizeTeamRepository,
+} from '../../sequelize';
+
+import {
+  ListAllMatchesController,
+  SaveMatchController,
+  FinishAMatchController,
+  GameUpdateInProgressController,
+} from '../../controllers';
 
 const matchRepository = new SequelizeMatchRepository();
 const listAllMatchesUseCase = new ListAllMatchesUseCase(matchRepository);

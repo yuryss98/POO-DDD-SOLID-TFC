@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import ListAllMatchesUseCase from '../../../domain/use-cases/match/ListAllMatches.usecase';
+import { ListAllMatchesUseCase } from '../../../domain/use-cases';
 
 export default class ListAllMatchesController {
   constructor(private _listAllMatchesUseCase: ListAllMatchesUseCase) { }

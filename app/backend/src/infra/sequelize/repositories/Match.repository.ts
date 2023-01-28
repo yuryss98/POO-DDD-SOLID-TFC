@@ -1,6 +1,6 @@
 import Team from '../../../database/models/Team';
 import MatchModel from '../../../database/models/Match';
-import IMatchDTO, { IMatchSave, IUpdateMatchInProgress } from '../../../domain/interfaces/IMatch';
+import { IMatchDTO, IMatchSave, IUpdateMatchInProgress } from '../../../domain/interfaces';
 
 export default class SequelizeMatchRepository {
   private modelMatch = MatchModel;
