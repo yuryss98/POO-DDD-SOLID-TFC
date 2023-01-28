@@ -84,7 +84,7 @@ npm run test:coverage
 ## Endpoints do Back-end caso queira testar usando algum framework Open Source para desenvolvimento/teste de API Clients, como Thunder Client, Insomnia, dentre outros: todos os endpoints são acessiveis a partir da rota http://localhost:3001
 
   <details close>
-  <summary>/login</summary>
+  <summary>POST /login</summary>
   -- O método POST em /login é usado para fazer login na aplicação, quando passado um usuario e senha corretos, retorna um token, esse token deve ser usado em algumas rotas da aplicação, esse endpoint aceita 2 campos, sendo eles:
   
   -- email: campo do tipo email - CAMPO OBRIGATORIO
@@ -109,7 +109,7 @@ npm run test:coverage
   </details>
   
   <details close>
-  <summary>/login/validate</summary>
+  <summary>GET /login/validate</summary>
   -- O método GET em /login/validate é usado para validar o token do usuario, se for um token valido, retorna a role do usuario, o token deve
   ser passado no header da requisição, na chave Authorization
   
@@ -117,7 +117,7 @@ npm run test:coverage
   
   <details close>
   
-  <summary>/teams</summary>
+  <summary>GET /teams</summary>
   
   -- O método GET em /teams é usado para listar todos os times da aplicação;
   
@@ -125,7 +125,7 @@ npm run test:coverage
   
   <details close>
   
-  <summary>/teams/id</summary>
+  <summary>GET /teams/id</summary>
   
   -- O método GET em /teams/id é usado para listar um time atraves do seu id;
   
@@ -133,7 +133,7 @@ npm run test:coverage
   
   <details close>
   
-  <summary>/matches</summary>
+  <summary>GET /matches</summary>
   
   -- O método GET em /matches é usado para listar todas as partidas;
   
@@ -141,7 +141,7 @@ npm run test:coverage
   
   <details close>
   
-  <summary>/matches?inProgress=false</summary>
+  <summary>GET /matches?inProgress=false</summary>
   
   -- O método GET em /matches?inProgress=false é usado para listar todas as partidas finalizadas;
   
@@ -149,7 +149,7 @@ npm run test:coverage
   
   <details close>
   
-   <summary>/matches?inProgress=true</summary>
+   <summary>GET /matches?inProgress=true</summary>
   
   -- O método GET em /matches?inProgress=true é usado para listar todas as partidas em andamento;
   
@@ -157,7 +157,7 @@ npm run test:coverage
   
   <details close>
   
-  <summary>/leaderboard</summary>
+  <summary>GET /leaderboard</summary>
   
   -- O método GET em /leaderboard é usado para listar a classificação geral das equipes;
   
@@ -165,7 +165,7 @@ npm run test:coverage
   
   <details close>
   
-  <summary>/leaderboard/home</summary>
+  <summary>GET /leaderboard/home</summary>
   
   -- O método GET em /leaderboard/home é usado para listar a classificação das equipes jogando em casa
   
@@ -173,7 +173,7 @@ npm run test:coverage
   
   <details close>
   
-  <summary>/leaderboard/away</summary>
+  <summary>GET /leaderboard/away</summary>
   
   -- O método GET em /leaderboard/away é usado para listar a classificação das equipes jogando como visitante
   
@@ -181,7 +181,7 @@ npm run test:coverage
   
   <details close>
   
-  <summary>/matches</summary>
+  <summary>POST /matches</summary>
   
   -- O método POST em /matches é usado para criar uma nova partida
   
@@ -211,7 +211,7 @@ npm run test:coverage
   
   <details close>
   
-  <summary>/matches/id</summary>
+  <summary>PATCH /matches/id</summary>
   
   -- O método PATCH em /matches/id é usado para atualizar o estado da partida em andamento
   
@@ -236,7 +236,7 @@ npm run test:coverage
   
   <details close>
   
-  <summary>/matches/id/finish</summary>
+  <summary>PATCH /matches/id/finish</summary>
   
   -- O método PATCH em /matches/id/finish é usado para finalizar uma partida em andamento
   
