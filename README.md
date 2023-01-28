@@ -83,6 +83,8 @@ npm run test:coverage
 
 ## Endpoints do Back-end caso queira testar usando algum framework Open Source para desenvolvimento/teste de API Clients, como Thunder Client, Insomnia, dentre outros: todos os endpoints são acessiveis a partir da rota http://localhost:3001
 
+<img src="./docs/TFC.gif" alt="gif"/>
+
   <details close>
   <summary>POST /login</summary>
   -- O método POST em /login é usado para fazer login na aplicação, quando passado um usuario e senha corretos, retorna um token, esse token deve ser usado em algumas rotas da aplicação, esse endpoint aceita 2 campos, sendo eles:
