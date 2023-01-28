@@ -59,9 +59,9 @@ Abra O terminal e execute os comandos:
 ## Depois que os containers subirem, pode acessar a rota: http://localhost:3000/login para vizualizar o funcionamento da aplicação
 
 ## Para fazer login use:
-  -- email: user@user.com;
+  -- email: user@user.com
  
-  -- password: secret_user;
+  -- password: secret_user
   
 ## Feito isso, pode testar a aplicação Front-end
 
