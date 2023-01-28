@@ -8,7 +8,7 @@ O Front-end desse projeto ja foi provido pela Trybe, minha responsabilidade era 
 
 Nesse projeto construi o Back-end dockerizado utilizando modelagem de dados através do Sequelize.
 
-Para desenvolver o Back-end optei por usar o paradigma da orientação a objeto (POO), seguindo os proncipios do SOLID, e aproveitei tambem para colocar em pratica meus conhecimentos sobre DDD (Domain Driven Designer), dai o nome de (POO-SOLID-DDD-TFC).
+Para desenvolver o Back-end optei por usar o paradigma da orientação a objeto (POO), seguindo os principios do SOLID, e aproveitei tambem para colocar em pratica meus conhecimentos sobre DDD (Domain Driven Designer), dai o nome de (POO-SOLID-DDD-TFC).
 
 Desenvolvi endpoints que estão conectados ao banco de dados seguindo os princípios do REST;
 
