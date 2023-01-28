@@ -1,4 +1,4 @@
-import IMatchDTO from '../interfaces/IMatch';
+import { IMatchDTO } from '../interfaces';
 
 export default class LeaderBoard {
   name = '';

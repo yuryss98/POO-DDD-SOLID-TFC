@@ -1,8 +1,5 @@
 import { sign } from 'jsonwebtoken';
-
-export interface IAuthService {
-  createToken(username: string, id: number, email: string, role: string): string
-}
+import { IAuthService } from '../../domain/interfaces';
 
 export default class AuthService implements IAuthService {
   private secretKey = process.env.JWT_SECRET || 'secret_key';

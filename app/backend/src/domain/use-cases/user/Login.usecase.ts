@@ -1,9 +1,7 @@
-import UserRepository from '../../repository/User.repository';
-import { IUserCredentials } from '../../interfaces/IUser';
+import { UserRepository } from '../../repository';
+import { IUserCredentials, IAuthService, IDecryptPassword } from '../../interfaces';
 import HttpException from '../validations/Http.exception';
-import { IAuthService } from '../../../infra/auth/Token';
 import LoginValidation from '../validations/user-validations/Login.validation';
-import IDecryptPassword from '../../interfaces/IDecryptPassword';
 
 export default class LoginUseCase {
   constructor(

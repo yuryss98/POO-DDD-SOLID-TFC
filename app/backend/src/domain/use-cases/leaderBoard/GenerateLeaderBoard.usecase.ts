@@ -1,6 +1,5 @@
 import LeaderBoard from '../../entities/LeaderBoard';
-import MatchRepository from '../../repository/Match.repository';
-import TeamRepository from '../../repository/Team.repository';
+import { MatchRepository, TeamRepository } from '../../repository';
 
 export default class GenerateLeaderBoardUseCase {
   constructor(

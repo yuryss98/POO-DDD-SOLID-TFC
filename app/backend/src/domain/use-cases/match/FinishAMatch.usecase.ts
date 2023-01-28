@@ -1,4 +1,4 @@
-import MatchRepository from '../../repository/Match.repository';
+import { MatchRepository } from '../../repository';
 
 export default class FinishAMatchUseCase {
   constructor(private matchRepository: MatchRepository) { }

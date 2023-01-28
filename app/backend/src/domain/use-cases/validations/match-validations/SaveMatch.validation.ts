@@ -1,4 +1,4 @@
-import { IMatchSave } from '../../../interfaces/IMatch';
+import { IMatchSave } from '../../../interfaces';
 import HttpException from '../Http.exception';
 
 export default class SaveMatchValidation {

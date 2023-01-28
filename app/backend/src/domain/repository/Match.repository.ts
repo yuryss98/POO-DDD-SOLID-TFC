@@ -1,4 +1,4 @@
-import IMatchDTO, { IMatchSave, IUpdateMatchInProgress } from '../interfaces/IMatch';
+import { IMatchDTO, IMatchSave, IUpdateMatchInProgress } from '../interfaces';
 
 export default abstract class MatchRepository {
   abstract findAll(query: string | undefined): Promise<IMatchDTO[]>;

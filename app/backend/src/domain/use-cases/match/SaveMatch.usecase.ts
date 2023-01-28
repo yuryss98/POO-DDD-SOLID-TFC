@@ -1,6 +1,5 @@
-import TeamRepository from '../../repository/Team.repository';
+import { MatchRepository, TeamRepository } from '../../repository';
 import { IMatchSave } from '../../interfaces/IMatch';
-import MatchRepository from '../../repository/Match.repository';
 import HttpException from '../validations/Http.exception';
 import SaveMatchValidation from '../validations/match-validations/SaveMatch.validation';
 

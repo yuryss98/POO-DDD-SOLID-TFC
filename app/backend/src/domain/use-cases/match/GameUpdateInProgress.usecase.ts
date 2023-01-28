@@ -1,5 +1,5 @@
-import { IUpdateMatchInProgress } from '../../interfaces/IMatch';
-import MatchRepository from '../../repository/Match.repository';
+import { IUpdateMatchInProgress } from '../../interfaces';
+import { MatchRepository } from '../../repository';
 
 export default class GameUpdateInProgressUseCase {
   constructor(private matchRepository: MatchRepository) { }

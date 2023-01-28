@@ -1,4 +1,4 @@
-import TeamRepository from '../../repository/Team.repository';
+import { TeamRepository } from '../../repository';
 
 export default class ListTeamByIdUseCase {
   constructor(private teamRepository: TeamRepository) { }
